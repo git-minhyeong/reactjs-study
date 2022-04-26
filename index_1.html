@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script>
+        const root = document.getElementById("root"); // 루트 그랩
+        const h3 = React.createElement(
+            "h3", {
+                onMouseEnter: () => console.log("Mouse Entered"),
+                style: {
+                    backgroundColor: "tomato",
+                },
+                // { id:"sexy-h3" , style: { color: "red"} }, 
+            }, "Hello I'm a h3!");
+            const btn = React.createElement("button", {
+                onClick: () => console.log("I'm Clicked"),
+                style: {
+                    backgroundColor: "tomato",
+                }
+            }, "Click me");
+            const container = React.createElement("div", null, [h3, btn]);
+        ReactDOM.render(container, root); // 스팬에 루트 삽입
+        // React.createElement 를 쓰는 것은 기초라서 해본 것
+        // ReactJS와 ReactDOM을 설치했음
+        // ReactDOM은 ReactElement를 HTML로 변경하는 역할을 함
+        // 그리고 3개의 Element를 만들어보았음
+        // Props 안에 EventLister를 등록Register할 수 있다는 것이 컸음
+    </script>
+</html>
